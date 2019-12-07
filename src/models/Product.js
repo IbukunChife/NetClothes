@@ -30,6 +30,7 @@ const ProductSchema = new mongoose.Schema({
     },
     path:{
         type: String,
+        required: true
     },
     createdAt: {
         type: Date,
@@ -43,8 +44,8 @@ const ProductSchema = new mongoose.Schema({
 
 );
 
-ProductSchema.virtual('url').get(function(){
-    const url = process.env.URL || 'http://localhost:3000'
+ProductSchema.virtual("url").get(function(){
+    const url = process.env.URL || `http://localhost:3000`
     
     return `${url}/Product/${encodeURIComponent(this.path)}`;
 

@@ -42,8 +42,8 @@ module.exports = {
             title,
             categoria,
             description,
-            images:filename,
-            path:path,
+            images:req.file.filename,
+            path:req.file.filename,
             price
         });
 
