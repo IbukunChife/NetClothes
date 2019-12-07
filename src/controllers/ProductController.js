@@ -22,7 +22,7 @@ module.exports = {
     },
 
     async store(req, res) {
-
+        console.log(req.file);
         const {filename}= req.file.originalname;
         const {PATH} = req.file.key;
         const {title,categoria,description,price} = req.body;
