@@ -23,8 +23,7 @@ module.exports = {
 
     async store(req, res) {
         console.log(req.file);
-        const {filename}= req.file.originalname;
-        const {PATH} = req.file.key;
+        const {filename,key}= req.file;
         const {title,categoria,description,price} = req.body;
    
         const product = await Product.create({
@@ -32,7 +31,7 @@ module.exports = {
             categoria,
             description,
             images:filename,
-            path:PATH,
+            path:key,
             price
         });
 
