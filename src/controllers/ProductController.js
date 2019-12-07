@@ -22,16 +22,30 @@ module.exports = {
     },
 
     async store(req, res) {
-        const {filename}= req.file;
-        const {title,categoria,description,price} = req.body;
 
+        const {filename}= req.file.originalname;
+        const {PATH} = req.file.key;
+        const {title,categoria,description,price} = req.body;
+   
         const product = await Product.create({
             title,
             categoria,
             description,
             images:filename,
+            path:PATH,
             price
         });
+
+        // const {filename}= req.file;
+        // const {title,categoria,description,price} = req.body;
+
+        // const product = await Product.create({
+        //     title,
+        //     categoria,
+        //     description,
+        //     images:filename,
+        //     price
+        // });
 
         Neo4jsession.run('CREATE(n:Produto{title:{product_title}}) RETURN n.title', {
                 product_id: product._id,

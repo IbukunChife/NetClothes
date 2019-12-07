@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const routes = require('./routes');
 const cors = require('cors');
+const path = require('path');
 
 //Iniciando e Testando o DB
 // const mongo_uri = 'mongodb://localhost:27017/didier';
@@ -81,6 +82,9 @@ app.use(passport.session());
 
 
 app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use('/product',express.static(path.resolve(__dirname,'..','uploads')));
+
 app.use(routes);
 app.listen(process.env.PORT || 3000);
 
