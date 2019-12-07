@@ -30,7 +30,6 @@ const ProductSchema = new mongoose.Schema({
     },
     path:{
         type: String,
-        required: false
     },
     createdAt: {
         type: Date,
@@ -38,7 +37,6 @@ const ProductSchema = new mongoose.Schema({
     },
 },
 {
-    timestamps: true,
     toObject: { virtuals:true},
     toJSON: { virtuals:true}
 }
