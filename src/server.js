@@ -4,6 +4,7 @@ const routes = require('./routes');
 const cors = require('cors');
 const path = require('path');
 
+
 //Iniciando e Testando o DB
 // const mongo_uri = 'mongodb://localhost:27017/didier';
 const mongo_uri = 'mongodb+srv://ibukun_23:a.361051@netclothes-0f1fs.mongodb.net/test?retryWrites=true&w=majority';
