@@ -10,7 +10,8 @@ const ProductSchema = new mongoose.Schema({
     categoria: {
         type: String,
         require: true
-    },genero:{
+    },
+    genero:{
         type:String,
         require: false
     },
