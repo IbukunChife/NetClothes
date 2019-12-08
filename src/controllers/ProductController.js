@@ -36,11 +36,12 @@ module.exports = {
         // });
 
         const {filename,path}= req.file;
-        const {title,categoria,description,price} = req.body;
+        const {title,categoria,description,price,genero} = req.body;
 
         const product = await Product.create({
             title,
             categoria,
+            genero,
             description,
             images:req.file.filename,
             path:req.file.filename,
